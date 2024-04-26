@@ -133,9 +133,9 @@ def afterlogin_view(request):
 
 
 
-#---------------------------------------------------------------------------------
+
 #------------------------ ADMIN RELATED VIEWS START ------------------------------
-#---------------------------------------------------------------------------------
+
 @login_required(login_url='adminlogin')
 @user_passes_test(is_admin)
 def admin_dashboard_view(request):
@@ -551,18 +551,18 @@ def reject_appointment_view(request,pk):
     appointment=models.Appointment.objects.get(id=pk)
     appointment.delete()
     return redirect('admin-approve-appointment')
-#---------------------------------------------------------------------------------
+
 #------------------------ ADMIN RELATED VIEWS END ------------------------------
-#---------------------------------------------------------------------------------
 
 
 
 
 
 
-#---------------------------------------------------------------------------------
+
+
 #------------------------ DOCTOR RELATED VIEWS START ------------------------------
-#---------------------------------------------------------------------------------
+
 @login_required(login_url='doctorlogin')
 @user_passes_test(is_doctor)
 def doctor_dashboard_view(request):
@@ -681,18 +681,18 @@ def delete_appointment_view(request,pk):
 
 
 
-#---------------------------------------------------------------------------------
+
 #------------------------ DOCTOR RELATED VIEWS END ------------------------------
-#---------------------------------------------------------------------------------
 
 
 
 
 
 
-#---------------------------------------------------------------------------------
+
+
 #------------------------ PATIENT RELATED VIEWS START ------------------------------
-#---------------------------------------------------------------------------------
+
 @login_required(login_url='patientlogin')
 @user_passes_test(is_patient)
 def patient_dashboard_view(request):
@@ -809,7 +809,6 @@ def patient_discharge_view(request):
 
 
 #------------------------ PATIENT RELATED VIEWS END ------------------------------
-#---------------------------------------------------------------------------------
 
 
 
@@ -818,9 +817,10 @@ def patient_discharge_view(request):
 
 
 
-#---------------------------------------------------------------------------------
+
+
 #------------------------ ABOUT US AND CONTACT US VIEWS START ------------------------------
-#---------------------------------------------------------------------------------
+
 def aboutus_view(request):
     return render(request,'hospital/aboutus.html')
 
@@ -837,12 +837,9 @@ def contactus_view(request):
     return render(request, 'hospital/contactus.html', {'form':sub})
 
 
-#---------------------------------------------------------------------------------
+
 #------------------------ ADMIN RELATED VIEWS END ------------------------------
-#---------------------------------------------------------------------------------
 
 
 
-#Developed By : sumit kumar
-#facebook : fb.com/sumit.luv
-#Youtube :youtube.com/lazycoders
+
