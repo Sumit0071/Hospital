@@ -428,7 +428,7 @@ def discharge_patient_view(request,pk):
             'total':(int(request.POST['roomCharge'])*int(d))+int(request.POST['doctorFee'])+int(request.POST['medicineCost'])+int(request.POST['OtherCharge'])
         }
         patientDict.update(feeDict)
-        #for updating to database patientDischargeDetails (pDD)
+        #for updating to database patientDischargeDetails 
         pDD=models.PatientDischargeDetails()
         pDD.patientId=pk
         pDD.patientName=patient.get_name
